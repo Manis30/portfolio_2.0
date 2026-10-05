@@ -61,6 +61,7 @@ export const TechNode: React.FC<TechNodeProps> = ({
   isHovered,
   onHover,
   onLeave,
+  onPositionUpdate,
 }) => {
   const groupRef = useRef<THREE.Group>(null);
   const [currentPos, setCurrentPos] = useState<[number, number, number]>(position);
