@@ -18,18 +18,18 @@ import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#050505] text-[#F5F5F5] font-sans selection:bg-[#8B5CF6]/30 selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#050505] text-[#F5F5F5] font-sans selection:bg-[#8B5CF6]/30 selection:text-white relative overflow-x-clip">
       {/* Minimal top scroll progress bar */}
       <ScrollProgress />
 
       {/* Subtle desktop cursor-following violet glow */}
       <CursorGlow />
 
-      {/* Sticky minimal editorial navigation */}
+      {/* Fixed minimal editorial navigation */}
       <Navbar />
 
-      {/* Main page content following exact required order */}
-      <main>
+      {/* Main page content with pt-[74px] for fixed navbar */}
+      <main className="pt-[74px]">
         {/* 2. Hero */}
         <Hero />
 

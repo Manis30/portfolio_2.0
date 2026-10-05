@@ -66,7 +66,12 @@ export const Navbar: React.FC = () => {
     const element = document.getElementById(targetId);
     if (element) {
       setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth' });
+        const navHeight = 74;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - navHeight,
+          behavior: 'smooth',
+        });
       }, 50);
     }
   };
@@ -74,7 +79,7 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-50 w-full transition-all duration-300 ${
           isScrolled
             ? 'bg-[#050508]/85 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.5)]'
             : 'bg-[#050508]/65 backdrop-blur-xl border-b border-white/[0.05]'
@@ -85,6 +90,12 @@ export const Navbar: React.FC = () => {
             {/* Logo: <MANI/S> */}
             <a
               href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileMenuOpen(false);
+                document.body.style.overflow = '';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               className="flex items-center group focus:outline-none"
               aria-label="Mani S Portfolio"
             >
