@@ -56,8 +56,8 @@ export const Navbar: React.FC = () => {
           : 'bg-[#050508]/65 backdrop-blur-xl border-b border-white/[0.05]'
       }`}
     >
-      <div className="max-w-[1360px] w-full mx-auto px-6 sm:px-10 lg:px-12">
-        <div className="flex items-center justify-between h-[68px]">
+      <div className="max-w-[1400px] w-full mx-auto px-6 sm:px-10 lg:px-12">
+        <div className="flex items-center justify-between h-[74px]">
           {/* Logo: <MANI/S> */}
           <a
             href="#"

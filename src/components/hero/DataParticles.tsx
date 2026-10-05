@@ -61,11 +61,17 @@ export const DataParticles: React.FC = () => {
     return { pathways: routes, particles: packetList };
   }, []);
 
-  // Pre-generate path line geometries
-  const pathLines = useMemo(() => {
+  // Pre-generate path line objects
+  const lineObjects = useMemo(() => {
+    const mat = new THREE.LineBasicMaterial({
+      color: 0x8B5CF6,
+      transparent: true,
+      opacity: 0.14,
+    });
     return pathways.map((path) => {
       const points = path.getPoints(40);
-      return new THREE.BufferGeometry().setFromPoints(points);
+      const geo = new THREE.BufferGeometry().setFromPoints(points);
+      return new THREE.Line(geo, mat);
     });
   }, [pathways]);
 
@@ -90,10 +96,8 @@ export const DataParticles: React.FC = () => {
   return (
     <group>
       {/* Subtle architectural data route lines */}
-      {pathLines.map((lineGeo, idx) => (
-        <line key={`route-line-${idx}`} geometry={lineGeo}>
-          <lineBasicMaterial color="#8B5CF6" transparent opacity={0.12} />
-        </line>
+      {lineObjects.map((lineObj, idx) => (
+        <primitive key={`route-line-${idx}`} object={lineObj} />
       ))}
 
       {/* 12 Animated Data Packets traveling through the system */}
