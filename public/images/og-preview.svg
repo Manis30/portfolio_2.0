@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#050505"/>
+  <circle cx="950" cy="180" r="320" fill="url(#violetGlow)" opacity="0.18"/>
+  <circle cx="200" cy="500" r="280" fill="url(#purpleGlow)" opacity="0.12"/>
+  
+  <!-- Subtle Grid -->
+  <defs>
+    <radialGradient id="violetGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Border Card Frame -->
+  <rect x="40" y="40" width="1120" height="550" rx="16" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
+
+  <!-- Logo Brand Mark -->
+  <text x="100" y="130" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="700" fill="#F5F5F5" letter-spacing="-1">
+    <tspan fill="#8B5CF6">&lt;</tspan>MANI<tspan fill="#A855F7">/S</tspan><tspan fill="#8B5CF6">&gt;</tspan>
+  </text>
+  
+  <rect x="100" y="160" width="160" height="2" fill="#8B5CF6" opacity="0.8"/>
+
+  <!-- Main Headline -->
+  <text x="100" y="270" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="76" font-weight="900" fill="#F5F5F5" letter-spacing="-0.04em">
+    I BUILD
+  </text>
+  <text x="100" y="350" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="76" font-weight="900" fill="#F5F5F5" letter-spacing="-0.04em">
+    DIGITAL
+  </text>
+  <text x="100" y="430" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="76" font-weight="900" fill="#8B5CF6" letter-spacing="-0.04em">
+    PRODUCTS.
+  </text>
+
+  <!-- Author & Role Info -->
+  <text x="100" y="515" font-family="'Inter', sans-serif" font-size="24" font-weight="600" fill="#F5F5F5">
+    MANI S
+  </text>
+  <text x="210" y="515" font-family="'Inter', sans-serif" font-size="22" font-weight="400" fill="#8B8F98">
+    — Full Stack MERN Developer
+  </text>
+  
+  <!-- Right Badges -->
+  <g transform="translate(780, 480)">
+    <rect width="320" height="48" rx="8" fill="#0D0F14" stroke="rgba(255, 255, 255, 0.1)"/>
+    <circle cx="24" cy="24" r="5" fill="#10B981"/>
+    <text x="38" y="29" font-family="'Inter', sans-serif" font-size="14" font-weight="500" fill="#8B8F98">
+      Available for Software Engineering Roles
+    </text>
+  </g>
+</svg>
