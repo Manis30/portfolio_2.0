@@ -10,11 +10,11 @@ export const Hero: React.FC = () => {
       {/* Barely visible technical grid (0.025 opacity) */}
       <div className="absolute inset-0 technical-grid opacity-[0.025] pointer-events-none" />
 
-      {/* Subtle radial purple glow behind the 3D core */}
+      {/* Subtle depth radial violet glow centered behind the 3D architectural core */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle at 70% 50%, rgba(124, 58, 237, 0.14) 0%, transparent 45%)',
+          background: 'radial-gradient(circle at 72% 50%, rgba(139, 92, 246, 0.22) 0%, rgba(99, 102, 241, 0.10) 35%, transparent 65%)',
         }}
       />
 

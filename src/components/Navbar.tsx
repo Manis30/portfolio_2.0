@@ -131,14 +131,15 @@ export const Navbar: React.FC = () => {
               href={PERSONAL_INFO.resumePath}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-mono-tech text-[#D4D4D8] hover:text-white font-medium transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0E0C1A]/80 border border-white/15 hover:border-white/35 text-xs font-mono-tech text-white font-medium transition-colors"
             >
-              Resume
+              <FileText className="w-3.5 h-3.5 text-[#C084FC]" />
+              <span>Resume</span>
             </a>
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg text-white bg-gradient-to-r from-[#8B5CF6] to-[#7C3AED] hover:brightness-110 shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-xl text-white bg-gradient-to-r from-[#7C3AED] via-[#8B5CF6] to-[#6366F1] hover:brightness-110 shadow-[0_0_18px_rgba(139,92,246,0.4)] transition-all duration-200"
             >
               <span>Let's Talk</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
