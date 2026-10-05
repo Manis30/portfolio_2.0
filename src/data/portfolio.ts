@@ -12,6 +12,8 @@ export const PERSONAL_INFO = {
   socialLinks: {
     github: "https://github.com/Manis30",
     linkedin: "https://www.linkedin.com/in/mani-s-515606376",
+    instagram: "https://www.instagram.com/mani.selvi.30/",
+    instagramUsername: "mani.selvi.30",
     leetcode: "https://leetcode.com/u/ManiSaravanan/",
     hackerrank: "https://www.hackerrank.com/profile/mani30saravanan",
     emailMailto: "mailto:mani30saravanan@gmail.com",

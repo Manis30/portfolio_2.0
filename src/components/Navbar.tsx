@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Menu, X, ArrowUpRight, Send, FileText } from 'lucide-react';
-import { Github, Linkedin } from './ui/Icons';
+import { Github, Linkedin, Instagram } from './ui/Icons';
 import { PERSONAL_INFO } from '../data/portfolio';
 
 const NAV_ITEMS = [
@@ -142,7 +142,7 @@ export const Navbar: React.FC = () => {
                   href={PERSONAL_INFO.socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-1.5 text-[#9A9DA6] hover:text-white transition-colors"
+                  className="p-1.5 text-[#9A9DA6] hover:text-[#C084FC] hover:scale-110 active:scale-95 transition-all duration-200"
                   aria-label="GitHub Profile"
                 >
                   <Github className="w-4 h-4" />
@@ -151,10 +151,19 @@ export const Navbar: React.FC = () => {
                   href={PERSONAL_INFO.socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-1.5 text-[#9A9DA6] hover:text-white transition-colors"
+                  className="p-1.5 text-[#9A9DA6] hover:text-[#C084FC] hover:scale-110 active:scale-95 transition-all duration-200"
                   aria-label="LinkedIn Profile"
                 >
                   <Linkedin className="w-4 h-4" />
+                </a>
+                <a
+                  href={PERSONAL_INFO.socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1.5 text-[#9A9DA6] hover:text-[#C084FC] hover:scale-110 active:scale-95 transition-all duration-200"
+                  aria-label="Instagram - mani.selvi.30"
+                >
+                  <Instagram className="w-4 h-4" />
                 </a>
               </div>
 
@@ -256,24 +265,36 @@ export const Navbar: React.FC = () => {
                 <span>Let's Talk / Connect</span>
               </a>
 
-              <div className="grid grid-cols-2 gap-3 pt-1">
+              <div className="grid grid-cols-3 gap-2 pt-1">
                 <a
                   href={PERSONAL_INFO.socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#0D0F14] border border-white/10 text-xs font-mono-tech text-[#9A9DA6] hover:text-white transition-colors"
+                  className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-[#0D0F14] border border-white/10 text-xs font-mono-tech text-[#9A9DA6] hover:text-[#C084FC] hover:border-[#8B5CF6]/30 transition-all"
+                  aria-label="GitHub Profile"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-3.5 h-3.5" />
                   <span>GitHub</span>
                 </a>
                 <a
                   href={PERSONAL_INFO.socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#0D0F14] border border-white/10 text-xs font-mono-tech text-[#9A9DA6] hover:text-white transition-colors"
+                  className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-[#0D0F14] border border-white/10 text-xs font-mono-tech text-[#9A9DA6] hover:text-[#C084FC] hover:border-[#8B5CF6]/30 transition-all"
+                  aria-label="LinkedIn Profile"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <Linkedin className="w-3.5 h-3.5" />
                   <span>LinkedIn</span>
+                </a>
+                <a
+                  href={PERSONAL_INFO.socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-[#0D0F14] border border-white/10 text-xs font-mono-tech text-[#9A9DA6] hover:text-[#C084FC] hover:border-[#8B5CF6]/30 transition-all"
+                  aria-label="Instagram - mani.selvi.30"
+                >
+                  <Instagram className="w-3.5 h-3.5" />
+                  <span>Instagram</span>
                 </a>
               </div>
             </div>

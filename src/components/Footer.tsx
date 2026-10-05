@@ -42,6 +42,15 @@ export const Footer: React.FC = () => {
               LinkedIn
             </a>
             <a
+              href={PERSONAL_INFO.socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram - mani.selvi.30"
+              className="hover:text-[#C084FC] transition-colors"
+            >
+              Instagram
+            </a>
+            <a
               href={PERSONAL_INFO.socialLinks.leetcode}
               target="_blank"
               rel="noopener noreferrer"

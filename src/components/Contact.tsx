@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, ArrowUpRight, Copy, Check, Award } from 'lucide-react';
-import { Github, Linkedin } from './ui/Icons';
+import { Github, Linkedin, Instagram } from './ui/Icons';
 import { Container } from './ui/Container';
 import { SectionLabel } from './ui/SectionLabel';
 import { Button } from './ui/Button';
@@ -184,6 +184,30 @@ export const Contact: React.FC = () => {
                   </h3>
                   <p className="text-[11px] font-mono-tech text-[#9A9DA6]">
                     Repositories, commits &amp; architecture
+                  </p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-[#9A9DA6] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href={PERSONAL_INFO.socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram - mani.selvi.30"
+              className="p-5 rounded-2xl bg-[#0D0F14] border border-white/[0.07] hover:border-[#8B5CF6]/40 transition-all flex items-center justify-between group shadow-lg"
+            >
+              <div className="flex items-center gap-4">
+                <div className="p-2.5 rounded-xl bg-[#11131A] text-[#9A9DA6] group-hover:text-white transition-colors">
+                  <Instagram className="w-4 h-4 text-[#8B5CF6]" />
+                </div>
+                <div>
+                  <h3 className="font-display text-sm font-bold text-white group-hover:text-[#8B5CF6] transition-colors">
+                    Instagram
+                  </h3>
+                  <p className="text-[11px] font-mono-tech text-[#9A9DA6]">
+                    @mani.selvi.30 &bull; Updates &amp; Developer Life
                   </p>
                 </div>
               </div>
