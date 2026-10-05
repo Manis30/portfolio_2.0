@@ -20,16 +20,24 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = NAV_ITEMS.map((item) => item.href.slice(1));
-      const scrollPosition = window.scrollY + 120;
+      // If at or near top (in Hero section), no nav link should be active
+      if (window.scrollY < 280) {
+        setActiveSection('');
+        return;
+      }
 
+      const sections = NAV_ITEMS.map((item) => item.href.slice(1));
+      const scrollPosition = window.scrollY + 140;
+
+      let current = '';
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = document.getElementById(sections[i]);
         if (element && element.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
+          current = sections[i];
           break;
         }
       }
+      setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
