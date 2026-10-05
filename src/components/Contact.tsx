@@ -9,6 +9,7 @@ import { PERSONAL_INFO } from '../data/portfolio';
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const [openingMail, setOpeningMail] = useState(false);
 
   const handleCopyEmail = async () => {
     try {
@@ -27,31 +28,28 @@ export const Contact: React.FC = () => {
         document.body.removeChild(textArea);
       }
       setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
+      setTimeout(() => setCopied(false), 2000);
     } catch {
-      try {
-        const textArea = document.createElement('textarea');
-        textArea.value = PERSONAL_INFO.email;
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
-        textArea.style.top = '-999999px';
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1800);
-      } catch {
-        // Fallback prompt if security denies
-        window.prompt('Copy email to clipboard:', PERSONAL_INFO.email);
-      }
+      window.prompt('Copy email to clipboard:', PERSONAL_INFO.email);
     }
   };
 
   const handleMailtoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Proactively invoke window.location to ensure mail client opens in restrictive environments
-    e.currentTarget.href = PERSONAL_INFO.socialLinks.emailMailto;
+    e.preventDefault();
+    handleCopyEmail();
+    setOpeningMail(true);
+    setTimeout(() => setOpeningMail(false), 2500);
+
+    // 1. Open Gmail Web compose in new tab
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      PERSONAL_INFO.email
+    )}&su=${encodeURIComponent('Software Engineering Role / Project Inquiry')}`;
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+
+    // 2. Also trigger default mailto protocol handler
+    setTimeout(() => {
+      window.location.href = PERSONAL_INFO.socialLinks.emailMailto;
+    }, 150);
   };
 
   return (
@@ -109,7 +107,14 @@ export const Contact: React.FC = () => {
                 onClick={handleMailtoClick}
                 className="relative inline-flex items-center justify-center font-medium transition-all duration-300 rounded-lg group overflow-hidden cursor-pointer select-none text-sm px-5 py-2.5 gap-2 tracking-wide bg-gradient-to-r from-[#8B5CF6] to-[#7C3AED] text-white shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:brightness-110 active:scale-[0.98]"
               >
-                <span>LET'S CONNECT ↗</span>
+                {openingMail ? (
+                  <>
+                    <Check className="w-4 h-4 text-emerald-300" />
+                    <span>OPENING EMAIL / COPIED ✓</span>
+                  </>
+                ) : (
+                  <span>LET'S CONNECT ↗</span>
+                )}
               </a>
               <button
                 type="button"
