@@ -22,9 +22,9 @@ export const PERSONAL_INFO = {
   portraitPath: "/images/mani-portrait.jpg",
   proofMetrics: [
     { value: "06+", subtitle: "MONTHS", label: "PRODUCTION EXPERIENCE", icon: "briefcase" },
-    { value: "130+", subtitle: "", label: "LEETCODE PROBLEMS", icon: "code" },
+    { value: "120+", subtitle: "", label: "LEETCODE PROBLEMS", icon: "code" },
     { value: "8.2", subtitle: "", label: "CGPA", icon: "chart" },
-    { value: "Rank 1", subtitle: "", label: "IFET MAXLOGIX'25", icon: "trophy" },
+    { value: "Rank 1", subtitle: "", label: "IFET LOGIC LEAGUE", icon: "trophy" },
   ],
   howIBuildSteps: [
     {

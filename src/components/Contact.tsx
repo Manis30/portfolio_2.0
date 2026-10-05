@@ -230,7 +230,7 @@ export const Contact: React.FC = () => {
                     LeetCode
                   </h3>
                   <p className="text-[11px] font-mono-tech text-[#9A9DA6]">
-                    130+ Solved algorithmic problems
+                    120+ Solved algorithmic problems
                   </p>
                 </div>
               </div>

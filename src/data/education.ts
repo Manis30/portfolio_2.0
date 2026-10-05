@@ -31,18 +31,21 @@ export const EDUCATION_DATA: EducationItem[] = [
 
 export const ACHIEVEMENTS_DATA: AchievementItem[] = [
   {
+    id: "logic-league",
+    metric: "Rank 1",
+    title: "Winner — IFET Logic League",
+    subtitle: "Awarded 1st Prize for outstanding algorithmic & technical problem solving by Dept. of CSE, IFET Autonomous College of Engineering",
+    certificateImage: "/images/logic-league.jpg",
+    link: "/images/logic-league.jpg",
+    linkLabel: "View Certificate",
+  },
+  {
     id: "leetcode",
-    metric: "130+",
+    metric: "120+",
     title: "LeetCode Problems Solved",
     subtitle: "Data Structures, Algorithms & Problem Solving",
     link: "https://leetcode.com/u/ManiSaravanan/",
     linkLabel: "View LeetCode Profile",
-  },
-  {
-    id: "maxlogix",
-    metric: "Rank 1",
-    title: "Winner — IFET Maxlogix'25",
-    subtitle: "Ranked 1st among 50+ participants in technical competition",
   },
   {
     id: "hackerrank",

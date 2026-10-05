@@ -56,4 +56,5 @@ export interface AchievementItem {
   subtitle?: string;
   link?: string;
   linkLabel?: string;
+  certificateImage?: string;
 }
