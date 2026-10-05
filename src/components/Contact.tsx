@@ -69,7 +69,7 @@ export const Contact: React.FC = () => {
             </span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-[#9A9DA6] max-w-2xl leading-relaxed font-normal font-sans">
-            I'm open to software engineering opportunities, full-stack development roles and interesting products worth building.
+            Get in touch with <strong className="text-white font-medium">MANI S</strong> for software engineering opportunities, full-stack MERN development roles, and scalable web applications.
           </p>
         </div>
 

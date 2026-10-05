@@ -12,13 +12,19 @@ export const HeroContent: React.FC = () => {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col justify-center max-w-[580px] z-10"
     >
-      {/* Availability Badge */}
-      <div className="mb-6 sm:mb-7">
+      {/* Availability Badge & Identity Tag */}
+      <div className="flex flex-wrap items-center gap-3 mb-6 sm:mb-7">
         <AvailabilityBadge />
+        <div className="inline-flex items-center gap-2 h-[34px] px-3.5 rounded-full bg-[#0E0C18] border border-white/10 text-[11px] font-mono-tech tracking-wider text-[#A1A1AA]">
+          <span className="font-semibold text-white">MANI S</span>
+          <span className="text-[#8B5CF6]">•</span>
+          <span className="text-[#C084FC]">Full Stack MERN Developer</span>
+        </div>
       </div>
 
       {/* Editorial Headline: Three Deliberate Lines */}
-      <h1 className="font-display font-black uppercase tracking-[-0.065em] leading-[0.88] mb-6 text-[clamp(64px,6vw,104px)] select-none">
+      <h1 className="font-display font-black uppercase tracking-[-0.065em] leading-[0.88] mb-6 text-[clamp(64px,6vw,104px)]">
+        <span className="sr-only">MANI S — Full Stack MERN Developer | Software Developer. </span>
         <div className="text-white">I BUILD</div>
         <div className="text-white">DIGITAL</div>
         <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B5CF6] via-[#A855F7] to-[#C084FC]">

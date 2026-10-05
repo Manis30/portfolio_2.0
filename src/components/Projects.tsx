@@ -21,6 +21,9 @@ export const Projects: React.FC = () => {
               BUILT.
             </span>
           </h2>
+          <p className="text-sm font-mono-tech text-[#9CA3AF] max-w-2xl mt-4">
+            Production full-stack web applications, scalable APIs, and system architectures built by <strong className="text-white font-medium">MANI S</strong>.
+          </p>
         </div>
 
         {/* Featured Projects Vertical Stack */}

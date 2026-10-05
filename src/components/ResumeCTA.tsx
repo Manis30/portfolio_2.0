@@ -30,7 +30,7 @@ export const ResumeCTA: React.FC = () => {
               </span>
             </h2>
             <p className="text-sm sm:text-base text-[#9A9DA6] leading-relaxed mb-6 font-normal font-sans">
-              Review my experience, technical skills, projects and educational background in the detailed resume.
+              Review the complete engineering experience, technical skills, projects, and educational background of <strong className="text-white font-medium">MANI S</strong> — Full Stack MERN Developer.
             </p>
 
             <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs font-mono-tech text-[#9A9DA6]">

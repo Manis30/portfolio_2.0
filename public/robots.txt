@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://manis.dev/sitemap.xml
+Sitemap: https://manideveloper.vercel.app/sitemap.xml

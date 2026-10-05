@@ -31,10 +31,10 @@ export const About: React.FC = () => {
 
               <div className="space-y-3.5 text-[#9A9DA6] font-normal font-sans">
                 <p className="text-[#F5F5F5] text-base sm:text-lg leading-relaxed">
-                  I’m a Computer Science and Engineering graduate focused on full-stack development. I enjoy building complete web applications across the frontend, backend, database, authentication and deployment layers.
+                  Hi, I'm <strong className="text-white font-semibold">MANI S</strong>, a <strong className="text-[#C084FC] font-semibold">Full Stack MERN Developer</strong> focused on building modern web applications, scalable backend systems, and clean user experiences.
                 </p>
                 <p className="text-[#9A9DA6] text-sm sm:text-base leading-relaxed">
-                  Specializing in the modern JavaScript ecosystem with clean architectural patterns, type safety, resilient database design, and intuitive user experiences.
+                  I engineer responsive frontends and resilient backend architectures using <span className="text-zinc-200">React</span>, <span className="text-zinc-200">JavaScript</span>, <span className="text-zinc-200">TypeScript</span>, <span className="text-zinc-200">Node.js</span>, <span className="text-zinc-200">Express.js</span>, and <span className="text-zinc-200">MongoDB</span>. My production solutions incorporate secure <span className="text-zinc-200">REST APIs</span>, real-time <span className="text-zinc-200">WebSockets</span>, utility-first styling with <span className="text-zinc-200">Tailwind CSS</span>, version control with <span className="text-zinc-200">Git</span>, and containerized deployment with <span className="text-zinc-200">Docker</span>.
                 </p>
               </div>
             </div>

@@ -17,6 +17,9 @@ export const Experience: React.FC = () => {
               BEEN BUILDING.
             </span>
           </h2>
+          <p className="text-sm font-mono-tech text-[#9CA3AF] max-w-2xl mt-4">
+            Professional software engineering experience by <strong className="text-white font-medium">MANI S</strong> — Full Stack MERN Developer.
+          </p>
         </div>
 
         {/* Timeline List */}

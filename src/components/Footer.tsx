@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
 
           {/* Copyright & Back to Top */}
           <div className="flex items-center gap-4">
-            <span>&copy; 2026 {PERSONAL_INFO.name}. All rights reserved.</span>
+            <span>&copy; 2026 MANI S — Full Stack MERN Developer. All rights reserved.</span>
             <button
               onClick={scrollToTop}
               className="p-2 rounded-lg bg-[#0D0F14] border border-white/10 hover:border-[#8B5CF6]/50 text-[#9A9DA6] hover:text-white transition-colors"

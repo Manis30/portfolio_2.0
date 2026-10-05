@@ -21,6 +21,9 @@ export const TechStack: React.FC = () => {
                 TO BUILD.
               </span>
             </h2>
+            <p className="text-sm font-mono-tech text-[#9A9DA6] max-w-xl mt-4">
+              Core technologies, frameworks, and developer toolchain mastered by <strong className="text-white font-medium">MANI S</strong> — Full Stack MERN Developer.
+            </p>
           </div>
 
           {/* View Mode Switcher */}
