@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Send } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Send, FileText } from 'lucide-react';
 import { Github, Linkedin } from './ui/Icons';
 import { PERSONAL_INFO } from '../data/portfolio';
 

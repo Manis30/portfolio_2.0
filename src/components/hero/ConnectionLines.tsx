@@ -10,15 +10,21 @@ interface ConnectionLinesProps {
 }
 
 export const ConnectionLines: React.FC<ConnectionLinesProps> = ({ nodes, hoveredNode }) => {
-  // Pre-generate linear pathways from [0, 0, 0] to each node
+  // Pre-generate linear pathways from [0, 0, 0] to each node's anchor position
   const packets = useMemo(() => {
-    return nodes.map((node, i) => ({
-      nodeId: node.id,
-      color: node.color,
-      target: new THREE.Vector3(...node.position),
-      speed: 0.25 + (i % 3) * 0.05,
-      offset: (i * 0.16) % 1,
-    }));
+    return nodes.map((node, i) => {
+      // Calculate anchor bead position adjacent to the card
+      const anchorX = node.position[0] + (node.id === 'react' || node.id === 'git' ? 0.95 : -0.95);
+      const targetPos = new THREE.Vector3(anchorX, node.position[1], node.position[2]);
+
+      return {
+        nodeId: node.id,
+        color: node.color,
+        target: targetPos,
+        speed: 0.28 + (i % 3) * 0.05,
+        offset: (i * 0.16) % 1,
+      };
+    });
   }, [nodes]);
 
   const packetRefs = useRef<(THREE.Mesh | null)[]>([]);
@@ -29,7 +35,7 @@ export const ConnectionLines: React.FC<ConnectionLinesProps> = ({ nodes, hovered
     packets.forEach((p, idx) => {
       const mesh = packetRefs.current[idx];
       if (mesh) {
-        // Progress cycling 0 -> 1 along the line
+        // Progress cycling 0 -> 1 along the connection ray
         const progress = (t * p.speed + p.offset) % 1;
         mesh.position.lerpVectors(new THREE.Vector3(0, 0, 0), p.target, progress);
       }
@@ -38,22 +44,25 @@ export const ConnectionLines: React.FC<ConnectionLinesProps> = ({ nodes, hovered
 
   return (
     <group>
-      {/* Maximum 6 subtle technical connection rays */}
+      {/* 6 Technical Connection Rays matching reference image */}
       {nodes.map((node) => {
         const isHovered = hoveredNode === node.id;
+        const anchorX = node.position[0] + (node.id === 'react' || node.id === 'git' ? 0.95 : -0.95);
+        const anchorPoint: [number, number, number] = [anchorX, node.position[1], node.position[2]];
+
         return (
           <Line
             key={`line-${node.id}`}
-            points={[[0, 0, 0], node.position]}
-            color={isHovered ? node.color : '#8B5CF6'}
-            lineWidth={isHovered ? 1.0 : 0.5}
+            points={[[0, 0, 0], anchorPoint]}
+            color={isHovered ? node.color : '#A855F7'}
+            lineWidth={isHovered ? 1.5 : 0.8}
             transparent
-            opacity={isHovered ? 0.65 : 0.15}
+            opacity={isHovered ? 0.85 : 0.28}
           />
         );
       })}
 
-      {/* Occasional small moving data packet along each connection ray */}
+      {/* Glowing data packet traveling along each ray */}
       {packets.map((p, idx) => (
         <mesh
           key={`packet-${p.nodeId}`}
@@ -61,11 +70,11 @@ export const ConnectionLines: React.FC<ConnectionLinesProps> = ({ nodes, hovered
             packetRefs.current[idx] = el;
           }}
         >
-          <sphereGeometry args={[0.024, 12, 12]} />
+          <sphereGeometry args={[0.032, 16, 16]} />
           <meshStandardMaterial
-            color={hoveredNode === p.nodeId ? p.color : '#C084FC'}
-            emissive={hoveredNode === p.nodeId ? p.color : '#C084FC'}
-            emissiveIntensity={1.4}
+            color={hoveredNode === p.nodeId ? p.color : '#E879F9'}
+            emissive={hoveredNode === p.nodeId ? p.color : '#E879F9'}
+            emissiveIntensity={2.5}
             roughness={0.1}
             metalness={0.8}
           />
