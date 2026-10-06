@@ -10,44 +10,85 @@ export const FEATURED_PROJECTS: Project[] = [
     longDescription:
       "CareFlow is a full-stack platform designed to connect patients, doctors, receptionists, organization administrators, and platform administrators through a centralized system. Built with React, Node.js, Express, and MongoDB, it handles the end-to-end patient appointment lifecycle, clinical consultations, role-based controls, and payment integrations.",
     technologies: [
-      "React",
+      "React 19",
       "Node.js",
-      "Express.js",
+      "Express 5",
       "MongoDB",
-      "JWT",
+      "Socket.IO",
+      "Google Gemini AI",
       "Razorpay",
-      "Tailwind CSS",
+      "Tailwind CSS v4",
+      "Tesseract.js OCR",
+      "Puppeteer",
+      "amCharts 5",
     ],
     image: "/images/projects/careflow.png",
     githubUrl: "https://github.com/Manis30/CareFlow",
     liveUrl: "https://care-flow-eosin.vercel.app/",
     workflowSteps: [
-      "Patient",
-      "Department",
-      "Doctor",
-      "Slot",
-      "Booking",
-      "Payment",
+      "Patient Registration",
+      "Select Department",
+      "Select Doctor",
+      "Select Available Slot",
+      "Book Appointment",
+      "Razorpay Payment",
       "Receptionist Verification",
       "Doctor Consultation",
       "Prescription / Record",
-      "Completed",
+      "Appointment Completed",
+    ],
+    architecture:
+      "Client Browser (React 19 + Tailwind CSS v4 + Vite) ⟷ HTTPS REST API (Express 5 + Helmet) + WSS Socket.IO ⟷ MongoDB Atlas (Mongoose 9) + Cloudinary + Razorpay + Google Gemini AI",
+    modules: [
+      {
+        name: "Authentication & Multi-Role RBAC",
+        description:
+          "Dual-token JWT (access + refresh) with HTTP-only cookies, password hashing, and role-based access control protecting 5 isolated personas: Super Admin, Organization Admin, Doctor, Receptionist, and Patient.",
+      },
+      {
+        name: "Deterministic Appointment State Engine",
+        description:
+          "10-stage appointment lifecycle engine ensuring conflict-free slot booking, deterministic expiration timers, payment confirmation, and real-time status auditing.",
+      },
+      {
+        name: "Doctor Workspace & Clinical Records",
+        description:
+          "Physician operational suite with daily queue management, availability slot scheduling, longitudinal patient medical histories, and integrated telehealth video consultations.",
+      },
+      {
+        name: "AI Diagnostics & Document OCR",
+        description:
+          "Embedded Tesseract.js engine for optical character recognition on uploaded medical reports, paired with Google Gemini AI for diagnostic assistance and clinical note formatting.",
+      },
+      {
+        name: "E-Prescriptions & PDF Generation",
+        description:
+          "Structured prescription builder specifying drug names, dosages, and regimens with automated pharmacy-ready PDF generation rendered via Puppeteer Core.",
+      },
+      {
+        name: "Organization & Super Admin Governance",
+        description:
+          "Multi-tenant hospital administration, clinical department setup, staff credentialing, and executive business intelligence dashboards powered by amCharts 5 and Recharts.",
+      },
     ],
     features: [
       "JWT authentication with access & refresh tokens and secure HTTP-only cookies",
-      "Role-Based Access Control (RBAC) across Super Admin, Organization Admin, Doctor, and Patient",
-      "Complete appointment management with real-time status updates and availability slots",
-      "Medical records, prescription management, and doctor-patient communication",
-      "Seamless Razorpay payment gateway integration and clinic operations oversight",
+      "Role-Based Access Control (RBAC) across Super Admin, Organization Admin, Doctor, Receptionist, and Patient",
+      "10-stage deterministic appointment lifecycle with real-time status updates and availability slot reservation",
+      "Digital medical records, longitudinal patient history, and doctor-patient communication",
+      "Integrated Razorpay payment gateway checkout with automated signature verification and invoicing",
+      "Google Gemini Generative AI clinical assistance and Tesseract.js OCR for diagnostic document extraction",
+      "Automated pharmacy-ready prescription PDF generation via Puppeteer Core",
+      "Clinical and financial operations analytics powered by amCharts 5 and Recharts",
     ],
     highlights: [
-      "Full consultation lifecycle orchestration",
-      "Multi-role RBAC architecture",
+      "Multi-Role RBAC & 10-Stage State Machine",
+      "Gemini AI Diagnostics & Razorpay Checkout",
     ],
     problem:
-      "Clinic workflows typically suffer from fragmented communication between receptionists, physicians, and billing desks, creating delays and booking conflicts.",
+      "Clinic workflows typically suffer from fragmented communication between receptionists, physicians, and billing desks, creating delays, double-booking conflicts, and disconnected patient medical records.",
     solution:
-      "CareFlow unifies the entire lifecycle into a deterministic state-machine workflow from initial booking to prescription issuance and clinic analytics.",
+      "CareFlow unifies clinical practice into a deterministic state-machine workflow from initial department discovery to payment, receptionist verification, physician consultation, AI-assisted diagnostics, and prescription archiving.",
     featured: true,
   },
   {
